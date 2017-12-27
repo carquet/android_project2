@@ -1,89 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.quidditchcounter.MainActivity"
-    android:orientation="vertical">
+    tools:context="com.example.android.quidditchcounter.MainActivity">
 
-    <TextView
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Quidditch" />
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/parchment1"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="cursive"
+            android:textSize="70dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:textStyle="bold"
+            android:text="Quidditch" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-            <ImageView
-                android:src="@drawable/gryffindor"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp" />
-            <TextView
-                android:id="@+id/gryff_score"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:textSize="40sp"
-                android:text="0"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="quaffle"
-                android:onClick="griffAddTen"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="snitch"
-                android:onClick="griffAddOneHundrednFifty"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-            <ImageView
-                android:src="@drawable/slytherin"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <ImageView
+                    android:src="@drawable/gryffindor"
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp" />
+                <TextView
+                    android:id="@+id/gryff_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="30dp"
+                    android:textSize="70sp"
+                    android:text="0"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="16dp"
+                    android:text="quaffle"
+                    android:onClick="griffAddTen"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="snitch"
+                    android:onClick="griffAddOneHundrednFifty"/>
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp" />
-            <TextView
-                android:id="@+id/slyth_score"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:textSize="40sp"
-                android:text="0"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="quaffle"
-                android:onClick="slythAddTen"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="snitch"
-                android:onClick="slythAddOneHundrednFifty"/>
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <ImageView
+                    android:src="@drawable/slytherin"
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp" />
+                <TextView
+                    android:id="@+id/slyth_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="30dp"
+                    android:textSize="70sp"
+                    android:text="0"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="16dp"
+                    android:text="quaffle"
+                    android:onClick="slythAddTen"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="snitch"
+                    android:onClick="slythAddOneHundrednFifty"/>
+            </LinearLayout>
         </LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="reset"
+            android:onClick="resetScores"/>
     </LinearLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="reset"
-        android:onClick="resetScores"/>
 
-</LinearLayout>
+
+
+
+
+
+
+</RelativeLayout>
