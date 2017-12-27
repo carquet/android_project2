@@ -39,12 +39,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="quaffle"/>
+                android:text="quaffle"
+                android:onClick="griffAddTen"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="snitch"/>
+                android:text="snitch"
+                android:onClick="griffAddOneHundrednFifty"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -56,6 +58,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dp" />
             <TextView
+                android:id="@+id/slyth_score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -65,12 +68,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="quaffle"/>
+                android:text="quaffle"
+                android:onClick="slythAddTen"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="snitch"/>
+                android:text="snitch"
+                android:onClick="slythAddOneHundrednFifty"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -78,6 +83,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="reset"/>
+        android:text="reset"
+        android:onClick="resetScores"/>
 
 </LinearLayout>
