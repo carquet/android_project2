@@ -27,13 +27,13 @@
             <ImageView
                 android:src="@drawable/gryffindor"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                />
+                android:layout_height="150dp" />
             <TextView
+                android:id="@+id/gryff_score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:textSize="14sp"
+                android:textSize="40sp"
                 android:text="0"/>
             <Button
                 android:layout_width="wrap_content"
@@ -54,12 +54,12 @@
             <ImageView
                 android:src="@drawable/slytherin"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
+                android:layout_height="150dp" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:textSize="40sp"
                 android:text="0"/>
             <Button
                 android:layout_width="wrap_content"
