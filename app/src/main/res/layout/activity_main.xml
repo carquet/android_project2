@@ -104,11 +104,4 @@
             android:onClick="resetScores"/>
     </LinearLayout>
 
-
-
-
-
-
-
-
 </RelativeLayout>

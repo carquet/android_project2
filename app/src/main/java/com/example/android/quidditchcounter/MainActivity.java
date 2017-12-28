@@ -10,6 +10,8 @@ import org.w3c.dom.Text;
 public class MainActivity extends AppCompatActivity {
     Integer griffScore = 0;
     Integer slythScore = 0;
+    boolean snitchDone = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,27 +23,40 @@ public class MainActivity extends AppCompatActivity {
         slythScore = 0;
         displayGriff(griffScore);
         displaySlyth(slythScore);
+        snitchDone = false;
+
     }
-    //Button Snitch
+    //SNITCH and END GAME
     public void griffAddOneHundrednFifty(View view){
-        griffScore += 150;
-        displayGriff(griffScore);
+        if(!snitchDone) {
+            snitchDone = true;
+            griffScore += 150;
+            displayGriff(griffScore);
+        }
     }
-
     public void slythAddOneHundrednFifty(View view){
-        slythScore += 150;
-        displaySlyth(slythScore);
+        if(!snitchDone){
+            snitchDone = true;
+            slythScore += 150;
+            displaySlyth(slythScore);
+        }
     }
 
-    // Button Quaffle
+    // QUAFFLE ADDS 10 POINTS AND STOPS AFTER THE SNITCH
     public void griffAddTen(View view){
-        griffScore += 10;
-        displayGriff(griffScore);
+        if(!snitchDone){
+            griffScore += 10;
+            displayGriff(griffScore);
+        }
+
     }
     public void slythAddTen(View view){
-        slythScore += 10;
-        displaySlyth(slythScore);
+        if(!snitchDone){
+            slythScore += 10;
+            displaySlyth(slythScore);
+        }
     }
+
     //these are methods that can display things on the application
     public void displayGriff(int score){
         TextView scoreView = (TextView) findViewById(R.id.gryff_score);
