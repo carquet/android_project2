@@ -11,11 +11,16 @@ public class MainActivity extends AppCompatActivity {
     Integer griffScore = 0;
     Integer slythScore = 0;
     boolean snitchDone = false;
+    TextView scoreViewSlyth;
+    TextView scoreViewGryff;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        scoreViewSlyth = (TextView) findViewById(R.id.slyth_score);
+        scoreViewGryff = (TextView) findViewById(R.id.gryff_score);
     }
     // reset scores
     public void resetScores(View view){
@@ -59,12 +64,10 @@ public class MainActivity extends AppCompatActivity {
 
     //these are methods that can display things on the application
     public void displayGriff(int score){
-        TextView scoreView = (TextView) findViewById(R.id.gryff_score);
-        scoreView.setText(String.valueOf(score));
+        scoreViewGryff.setText(String.valueOf(score));
     }
 
     public void displaySlyth(int score){
-        TextView scoreView = (TextView) findViewById(R.id.slyth_score);
-        scoreView.setText(String.valueOf(score));
+        scoreViewSlyth.setText(String.valueOf(score));
     }
 }
