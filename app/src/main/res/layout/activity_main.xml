@@ -21,93 +21,71 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="10dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="cursive"
                 android:textSize="70sp"
                 android:layout_gravity="center_horizontal"
-                android:layout_margin="10dp"
+
                 android:textStyle="bold"
                 android:text= "@string/match_title" />
-
+                <!-- scoreboard -->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
+                    android:layout_height="500dp"
                     android:orientation="horizontal">
-
+                    <!-- Gryffindor scoreboard -->
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        style="@style/scoreBoard">
+                        style="@style/team_scoreBoard">
                         <ImageView
+                            style="@style/team_image"
                             android:src="@drawable/gryffindor"
-                            android:layout_width="match_parent"
-                            android:layout_height="170dp" />
+                            android:contentDescription="@string/gryffindor"/>
                         <TextView
                             android:id="@+id/gryff_score"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_margin="30dp"
-                            android:textSize="70sp"
+                            style="@style/score"
                             android:text="@string/score"/>
                         <Button
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginBottom="16dp"
+                            style="@style/button"
                             android:text="@string/quaffle"
-                            android:background="#903a3c"
-                            android:textColor="#EABD08"
-                            android:textStyle="bold"
+                            android:background="@color/background_gryffindor"
+                            android:textColor="@color/text_gryffindor"
                             android:onClick="griffAddTen"/>
                         <Button
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            style="@style/button"
                             android:text="@string/snitch"
-                            android:background="#903a3c"
-                            android:textColor="#EABD08"
+                            android:background="@color/background_gryffindor"
+                            android:textColor="@color/text_gryffindor"
                             android:onClick="griffAddOneHundrednFifty"/>
-                    </LinearLayout>
+                    </LinearLayout> <!-- end of Gryffindor scoreboard -->
+
+                    <!-- Slytherin scoreboard -->
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        style="@style/scoreBoard">
+                        style="@style/team_scoreBoard">
                         <ImageView
+                            style="@style/team_image"
                             android:src="@drawable/slytherin"
                             android:contentDescription="@string/slytherin"
-                            android:layout_width="match_parent"
-                            android:layout_height="170dp" />
+                             />
                         <TextView
                             android:id="@+id/slyth_score"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_margin="30dp"
-                            android:textSize="70sp"
+                            style="@style/score"
                             android:text="@string/score"/>
                         <Button
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginBottom="16dp"
+                            style="@style/button"
                             android:text="@string/quaffle"
-                            android:background="#06322c"
-                            android:textColor="#b7afb7"
+                            android:background="@color/background_slytherin"
+                            android:textColor="@color/text_slytherin"
                             android:onClick="slythAddTen"/>
                         <Button
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:background="#06322c"
-                            android:textColor="#b7afb7"
+                            style="@style/button"
+                            android:background="@color/background_slytherin"
+                            android:textColor="@color/text_slytherin"
                             android:text="@string/snitch"
                             android:onClick="slythAddOneHundrednFifty"/>
-                    </LinearLayout>
+                    </LinearLayout> <!--end of Slytherin scoreboard -->
                 </LinearLayout>
 
 
@@ -115,11 +93,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="15dp"
                 android:background="#413e3f"
                 android:textColor="#e5eee9"
                 android:text="@string/reset"
                 android:onClick="resetScores"/>
-        </LinearLayout>
+        </LinearLayout> <!-- end of scoreboard -->
     </ScrollView>
 </RelativeLayout>
