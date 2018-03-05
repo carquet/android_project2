@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">QuidditchCounter</string>
     <string name="match_title">Quidditch</string>
+    <string name="slytherin">Logo slytherin House</string>
     <string name="score">0</string>
     <string name="quaffle">quaffle</string>
     <string name="snitch">snitch</string>
