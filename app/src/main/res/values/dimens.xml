@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_ten">10dp</dimen>
+    <dimen name="title_size">70sp</dimen>
+    <dimen name="total_board">500dp</dimen>
+</resources>

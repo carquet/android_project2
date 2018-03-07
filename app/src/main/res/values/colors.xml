@@ -7,4 +7,6 @@
     <color name="background_gryffindor">#903a3c</color>
     <color name="text_slytherin">#b7afb7</color>
     <color name="text_gryffindor">#EABD08</color>
+    <color name="reset_button_background">#413e3f</color>
+    <color name="reset_button_text">#e5eee9</color>
 </resources>
