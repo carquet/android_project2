@@ -8,6 +8,8 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String SCORE_GRYFF = "string";
+    public static final String SCORE_SLYTH = "stringaswell";
     Integer griffScore = 0;
     Integer slythScore = 0;
     boolean snitchDone = false;
@@ -21,7 +23,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         scoreViewSlyth = (TextView) findViewById(R.id.slyth_score);
         scoreViewGryff = (TextView) findViewById(R.id.gryff_score);
+
+        if(savedInstanceState != null){
+            String score1 = savedInstanceState.getString(SCORE_GRYFF);
+            String score2 = savedInstanceState.getString(SCORE_SLYTH);
+            scoreViewGryff.setText(score1);
+            scoreViewSlyth.setText(score2);
+        }
     }
+    @Override
+    protected void onSaveInstanceState(Bundle outState){
+        outState.putString(SCORE_GRYFF, scoreViewGryff.getText().toString());
+        outState.putString(SCORE_SLYTH, scoreViewSlyth.getText().toString());
+
+        super.onSaveInstanceState(outState);
+    }
+
     // reset scores
     public void resetScores(View view){
         griffScore = 0;
