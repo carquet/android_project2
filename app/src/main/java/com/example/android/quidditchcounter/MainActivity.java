@@ -11,11 +11,11 @@ public class MainActivity extends AppCompatActivity {
     public static final String SLYTH_SCORE = "Slythering score data";
     public static final String GRYFFINDOR_SCORE = "Gryffindor Score data";
     public static final String END_GAME_STATE = "end game state";
-    Integer griffScore = 0;
-    Integer slythScore = 0;
-    boolean snitchDone = false;
-    TextView scoreViewSlyth;
-    TextView scoreViewGryff;
+    private Integer griffScore = 0;
+    private Integer slythScore = 0;
+    private boolean snitchDone = false;
+    private TextView scoreViewSlyth;
+    private TextView scoreViewGryff;
 
 
     @Override
