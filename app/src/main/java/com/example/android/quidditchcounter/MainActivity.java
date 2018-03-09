@@ -1,15 +1,15 @@
 package com.example.android.quidditchcounter;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 public class MainActivity extends AppCompatActivity {
-    public static final String SCORE_GRYFF = "string";
-    public static final String SCORE_SLYTH = "stringaswell";
+    public static final String SCORE_VIEW_GRYFF = "View Score Gryffindor";
+    public static final String SCORE_VIEW_SLYTH = "View Score Slytherin";
+    public static final String SLYTH_SCORE = "Slythering score data";
+    public static final String GRYFFINDOR_SCORE = "Gryffindor Score data";
     Integer griffScore = 0;
     Integer slythScore = 0;
     boolean snitchDone = false;
@@ -25,16 +25,34 @@ public class MainActivity extends AppCompatActivity {
         scoreViewGryff = (TextView) findViewById(R.id.gryff_score);
 
         if(savedInstanceState != null){
-            String score1 = savedInstanceState.getString(SCORE_GRYFF);
-            String score2 = savedInstanceState.getString(SCORE_SLYTH);
+            //RETRIEVING SCORE DATA
+            griffScore = savedInstanceState.getInt(GRYFFINDOR_SCORE, griffScore);
+            slythScore = savedInstanceState.getInt(SLYTH_SCORE, slythScore);
+
+            //RETRIEVING STRINGS FOR VIEWS
+            String score1 = savedInstanceState.getString(SCORE_VIEW_GRYFF);
+            String score2 = savedInstanceState.getString(SCORE_VIEW_SLYTH);
+
+            //DISPLAYING THE SAVED DATA
             scoreViewGryff.setText(score1);
             scoreViewSlyth.setText(score2);
+
+
+
+
         }
     }
+
     @Override
     protected void onSaveInstanceState(Bundle outState){
-        outState.putString(SCORE_GRYFF, scoreViewGryff.getText().toString());
-        outState.putString(SCORE_SLYTH, scoreViewSlyth.getText().toString());
+        //Saving gryffindor's score as data and view
+        outState.putString(SCORE_VIEW_GRYFF, griffScore.toString());
+        outState.putInt(GRYFFINDOR_SCORE, griffScore);
+
+        //Saving SLYTHERIN's score as data and view
+        outState.putString(SCORE_VIEW_SLYTH, slythScore.toString());
+        outState.putInt(SLYTH_SCORE, slythScore);
+
 
         super.onSaveInstanceState(outState);
     }
@@ -79,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //these are methods that can display things on the application
+    //these are methods that can display scores on in their respective views
     public void displayGriff(int score){
         scoreViewGryff.setText(String.valueOf(score));
     }
