@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.quidditchcounter.MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/parchment1" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/padding_ten">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="cursive"
+                android:text="@string/match_title"
+                android:textSize="@dimen/title_size"
+                android:textStyle="bold" />
+            <!-- scoreboard -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/total_board"
+                android:orientation="horizontal">
+                <!-- Gryffindor scoreboard -->
+                <LinearLayout style="@style/team_scoreBoard">
+
+                    <ImageView
+                        style="@style/team_image"
+                        android:contentDescription="@string/gryffindor"
+                        android:src="@drawable/gryffindor" />
+
+                    <TextView
+                        android:id="@+id/gryff_score"
+                        style="@style/score"
+                        android:text="@string/score" />
+
+                    <Button
+                        style="@style/button"
+                        android:background="@color/background_gryffindor"
+                        android:onClick="griffAddTen"
+                        android:text="@string/quaffle"
+                        android:textColor="@color/text_gryffindor" />
+
+                    <Button
+                        style="@style/button"
+                        android:background="@color/background_gryffindor"
+                        android:onClick="griffAddOneHundrednFifty"
+                        android:text="@string/snitch"
+                        android:textColor="@color/text_gryffindor" />
+                </LinearLayout> <!-- end of Gryffindor scoreboard -->
+
+                <!-- Slytherin scoreboard -->
+                <LinearLayout style="@style/team_scoreBoard">
+
+                    <ImageView
+                        style="@style/team_image"
+                        android:contentDescription="@string/slytherin"
+                        android:src="@drawable/slytherin" />
+
+                    <TextView
+                        android:id="@+id/slyth_score"
+                        style="@style/score"
+                        android:text="@string/score" />
+
+                    <Button
+                        style="@style/button"
+                        android:background="@color/background_slytherin"
+                        android:onClick="slythAddTen"
+                        android:text="@string/quaffle"
+                        android:textColor="@color/text_slytherin" />
+
+                    <Button
+                        style="@style/button"
+                        android:background="@color/background_slytherin"
+                        android:onClick="slythAddOneHundrednFifty"
+                        android:text="@string/snitch"
+                        android:textColor="@color/text_slytherin" />
+                </LinearLayout> <!--end of Slytherin scoreboard -->
+            </LinearLayout>
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/reset_button_background"
+                android:onClick="resetScores"
+                android:text="@string/reset"
+                android:textColor="@color/reset_button_text" />
+        </> <!-- end of scoreboard -->
+
+</RelativeLayout>

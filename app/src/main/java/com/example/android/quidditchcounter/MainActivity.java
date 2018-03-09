@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String SLYTH_SCORE = "Slythering score data";
     public static final String GRYFFINDOR_SCORE = "Gryffindor Score data";
     public static final String END_GAME_STATE = "end game state";
+
     private Integer griffScore = 0;
     private Integer slythScore = 0;
     private boolean snitchDone = false;
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         scoreViewSlyth = (TextView) findViewById(R.id.slyth_score);
         scoreViewGryff = (TextView) findViewById(R.id.gryff_score);
 
-        if(savedInstanceState != null){
+        if (savedInstanceState != null) {
             //RETRIEVING SCORE DATA
             griffScore = savedInstanceState.getInt(GRYFFINDOR_SCORE, griffScore);
             slythScore = savedInstanceState.getInt(SLYTH_SCORE, slythScore);
@@ -41,12 +42,11 @@ public class MainActivity extends AppCompatActivity {
             //RESTATING ENDGAME
             snitchDone = savedInstanceState.getBoolean(END_GAME_STATE);
 
-
         }
     }
 
     @Override
-    protected void onSaveInstanceState(Bundle outState){
+    protected void onSaveInstanceState(Bundle outState) {
         //Saving gryffindor's score as data and view
         outState.putString(SCORE_VIEW_GRYFF, griffScore.toString());
         outState.putInt(GRYFFINDOR_SCORE, griffScore);
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // reset scores
-    public void resetScores(View view){
+    public void resetScores(View view) {
         griffScore = 0;
         slythScore = 0;
         displayGriff(griffScore);
@@ -69,16 +69,18 @@ public class MainActivity extends AppCompatActivity {
         snitchDone = false;
 
     }
+
     //SNITCH and END GAME
-    public void griffAddOneHundrednFifty(View view){
-        if(!snitchDone) {
+    public void griffAddOneHundrednFifty(View view) {
+        if (!snitchDone) {
             snitchDone = true;
             griffScore += 150;
             displayGriff(griffScore);
         }
     }
-    public void slythAddOneHundrednFifty(View view){
-        if(!snitchDone){
+
+    public void slythAddOneHundrednFifty(View view) {
+        if (!snitchDone) {
             snitchDone = true;
             slythScore += 150;
             displaySlyth(slythScore);
@@ -86,26 +88,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // QUAFFLE ADDS 10 POINTS AND STOPS AFTER THE SNITCH
-    public void griffAddTen(View view){
-        if(!snitchDone){
+    public void griffAddTen(View view) {
+        if (!snitchDone) {
             griffScore += 10;
             displayGriff(griffScore);
         }
 
     }
-    public void slythAddTen(View view){
-        if(!snitchDone){
+
+    public void slythAddTen(View view) {
+        if (!snitchDone) {
             slythScore += 10;
             displaySlyth(slythScore);
         }
     }
 
     //these are methods that can display scores on in their respective views
-    public void displayGriff(int score){
+    public void displayGriff(int score) {
         scoreViewGryff.setText(String.valueOf(score));
     }
 
-    public void displaySlyth(int score){
+    public void displaySlyth(int score) {
         scoreViewSlyth.setText(String.valueOf(score));
     }
 }
