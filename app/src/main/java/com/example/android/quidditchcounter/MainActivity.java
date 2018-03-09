@@ -10,6 +10,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String SCORE_VIEW_SLYTH = "View Score Slytherin";
     public static final String SLYTH_SCORE = "Slythering score data";
     public static final String GRYFFINDOR_SCORE = "Gryffindor Score data";
+    public static final String END_GAME_STATE = "end game state";
     Integer griffScore = 0;
     Integer slythScore = 0;
     boolean snitchDone = false;
@@ -37,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
             scoreViewGryff.setText(score1);
             scoreViewSlyth.setText(score2);
 
-
+            //RESTATING ENDGAME
+            snitchDone = savedInstanceState.getBoolean(END_GAME_STATE);
 
 
         }
@@ -53,7 +55,8 @@ public class MainActivity extends AppCompatActivity {
         outState.putString(SCORE_VIEW_SLYTH, slythScore.toString());
         outState.putInt(SLYTH_SCORE, slythScore);
 
-
+        //saving gameover
+        outState.putBoolean(END_GAME_STATE, snitchDone);
         super.onSaveInstanceState(outState);
     }
 
